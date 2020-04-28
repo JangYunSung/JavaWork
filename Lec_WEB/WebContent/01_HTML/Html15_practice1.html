@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>주문 폼 작성</title>
+</head>
+<body>
+<STYLE>
+body,td {font-size:12px}
+</STYLE>
+
+
+<form>
+
+<table border="0" cellspacing="1" cellpadding="4" width="700" bgColor=orange>
+<tr>
+<td colspan=2 width="100%">
+<b><font color=white size="2" face="굴림">주문자 정보입력</font></b>
+</td>
+</tr>
+<tr>
+<td bgColor=lightyellow>구매자정보:</td>
+<td> <span>비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다.</span>
+<input type="button" value="휴대폰인증"/><input type="button" value="아이핀인증"/></td>
+</tr>
+<tr>
+<td bgColor=lightyellow>주소:</td>
+<td> <input type="text"><input type="button" value="주소찾기"><br><input type="text" size="40" maxlength="35" name="BillAddress1"><br><input type="text" size="40" maxlength="35" name="BillAddress1"></td>
+</tr>
+<tr>
+<td bgColor=lightyellow>휴대폰:</td>
+<td ><span><select><option>010</option><option>070</option><option>031</option></select>
+<input type="text">-<input type="text">
+<input type="checkbox" name="sns" value="sns" checked>sns수신동의
+</span ></td>
+</tr>
+<tr>
+<td bgColor=lightyellow>이메일:</td>
+<td ><span>
+<input type="text">@<input type="text"><select>
+<option>nate.com</option>
+<option>naver.com</option>
+<option>daum.net</option>
+</select>
+</span></td>
+</tr>
+</table>
+</form>
+<br>
+<br>
+<br>
+<form>
+
+<table border="0" cellspacing="1" cellpadding="4" width="700" bgColor=orange>
+<tr>
+<td colspan=2 width="100%">
+<b><font color=white size="2" face="굴림">배송지 정보입력</font></b>
+</td>
+</tr>
+<tr>
+<td bgColor=lightyellow>배송지 선택:</td>
+<td> <span>비회원으로 상품구매 시 반드시 본인인증을 하셔야 합니다.</span>
+<input type="button" value="주문자 정보와 동일"/></td>
+</tr>
+<tr>
+<td bgColor=lightyellow>받으시는분:</td>
+<td><input type="text"/></td>
+</tr>
+<tr>
+<td bgColor=lightyellow>주소:</td>
+<td> <input type="text"><input type="button" value="주소찾기"><br><input type="text" size="40" maxlength="35" name="BillAddress1"><br><input type="text" size="40" maxlength="35" name="BillAddress1"></td>
+</tr>
+<tr>
+<td bgColor=lightyellow>휴대폰:</td>
+<td ><span><select><option>010</option><option>070</option><option>031</option></select>
+<input type="text">-<input type="text">
+<input type="checkbox" name="sns" value="sns" checked>sns수신동의
+</span ></td>
+</tr>
+<tr>
+<td bgColor=lightyellow>배송사 요구사항:</td>
+<td ><input type="text" size="40" maxlength="35" name="BillAddress1"></td>
+</tr>
+</table>
+</form>
+
+<br>
+<br>
+<br>
+
+<form>
+<table border="0" cellspacing="1" cellpadding="4" width="700" bgColor=orange>
+<tr>
+<td colspan=2 width="100%">
+<b><font color=white size="2" face="굴림">결제 정보 입력</font></b>
+</td>
+</tr>
+<tr>
+<td bgColor=lightyellow>신용카드<br>현금결제</td>
+
+<td><input type="radio" name="gender" value="male"checked/>신용카드(일반)
+<input type="radio" name="gender" value="pet"/>신용카드(법인)
+<input type="radio" name="gender" value="pet"/>해외발급카드<br>
+<input type="radio" name="gender" value="female" />무통장입금
+<input type="radio" name="gender" value="female" />실시간계좌이체
+<br></td>
+
+<tr>
+<td bgColor=lightyellow>카드선택:</td>
+<td>
+<select>
+<option>카드를선택하세요</option>
+<option>신한은행카드</option>
+<option>국민은행카드</option>
+</select>
+</td>
+</tr>
+<tr>
+<td bgColor=lightyellow>할부방식:</td>
+<td>
+<select>
+<option>일시불</option>
+<option>3개월</option>
+<option>6개월</option>
+</select>
+</td>
+</tr>
+<tr>
+<td bgColor=lightyellow>결제안내:</td>
+<td><input type="button" value="간편결제안내"/>&nbsp<input type="button" value="공인인증안내"/>&nbsp<input type="button" value="안전결제안내"/>&nbsp<input type="button" value="안심클릭안내"/>&nbsp<input type="button" value="해외발급카드안내"/></td>
+
+
+</table>
+</form>
+
+
+
+
+
+
+</BODY>
+</HTML>
+
+
+
+
+
+
+  
+
+<!--  
+<input type="text" class="text2"><br>
+<input type="text" class="text2"><span></p>
+<p class="submit"><label></label><input class="submit2" type="submit" value="주문신청완료"></p>
+-->
