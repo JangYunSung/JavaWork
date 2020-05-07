@@ -19,22 +19,25 @@ public class Main {
 		int a = sc.nextInt();
 		int b = 0;
 		for (int i = a; i > 0; i--) {
-			if(b==1) {
-				System.out.print(" ");
-			}else if(b==2){
-				System.out.print("  ");
+		
+					System.out.print(" ");
+					
+					for (int j = i; j >0; j--) {
+						System.out.print("*");
+						
+						if(j==1) {
+							b++;
+						}
+					}
+					System.out.println();
+		
+					
+					
 			}
-			
-			for (int j = i; j >0; j--) {
-				System.out.print("*");
-			
-				if(j==1) {
-					b++;
-				}
+				
 			}
-			System.out.println();
 			
 		}
-	}
+	
 
-}
+
