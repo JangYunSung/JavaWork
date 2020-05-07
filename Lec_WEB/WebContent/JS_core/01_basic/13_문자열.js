@@ -91,6 +91,9 @@ console.log(str3.split('-'))
 
 
 
+st = "Japan Japann0 dJapanit Japan! Japano Japan Japan ";
+console.log(st.replace("Japan", "Korea"));  // 기본적으로 첫번째만 치환됨.
+console.log(st.replace(/Japan/g, "Korea")) // 정규표현식, global match
 
 
 

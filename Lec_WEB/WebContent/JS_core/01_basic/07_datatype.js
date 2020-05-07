@@ -44,7 +44,7 @@
     console.log('a = ' ,a , typeof a)
 
 
-    if(a){   // <-- new 를 사용하여 생성하면 좃건식에서 '참' 으로 판정된다 .
+    if(a){   // <-- new 를 사용하여 생성하면 조건식에서 '참' 으로 판정된다 .
             console.log(a, "참입니다")
         }else{
             console.log(a, "거짓 입니다")
