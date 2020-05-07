@@ -31,8 +31,6 @@ public class Main {
 				if(j==1) {
 					b++;
 				}
-//					System.out.println();
-//					System.out.print(" ");
 			}
 			System.out.println();
 			
