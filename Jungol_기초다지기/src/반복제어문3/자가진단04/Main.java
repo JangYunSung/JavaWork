@@ -18,26 +18,25 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
 		int b = 0;
+		
+	
+		
 		for (int i = a; i > 0; i--) {
-		
-					System.out.print(" ");
-					
-					for (int j = i; j >0; j--) {
-						System.out.print("*");
-						
-						if(j==1) {
-							b++;
-						}
-					}
-					System.out.println();
-		
-					
-					
+			
+			for (int j = b; j < a-i ; j++ ) {
+				System.out.print(" ");
 			}
+		
+			
+			for (int j = i; j > 0; j--) {
+				System.out.print("*");
+
 				
 			}
-			
+			System.out.println();
+
 		}
-	
 
+	}
 
+}
