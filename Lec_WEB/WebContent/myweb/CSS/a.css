@@ -5,19 +5,18 @@
 }
 
 
-body::after{
+#wrap::after{
 	width: 100%;
 	height: 100%;
 	content: "";
-	background: url("image/bowling.jpg");
-	background-repeat: repeat;
+	background: url("../image/bowling.jpg");/* 이미지*/
+	background-repeat: repeat-y repeat-x;
 	position: absolute;
-	top: 0px;
-	left: 0px;
-	padding: 0px; 
-	margin: 0px;
+	top: 0;
+	left: 0;
+	margin: 0;
 	z-index: -1;
-	opacity: 0.5;
+	opacity: 0.3;
 	
 }
 
@@ -32,8 +31,12 @@ body::after{
 	margin-left: auto;
 	background-image: url("image/aaaz.png");/* 이미지*/
 	background-repeat: repeat-y;
-	min-height: 780px;
+
 }
+
+
+
+
 
 #logo {
 	width: 265px;
@@ -57,7 +60,7 @@ nav#top_menu ul {
 	list-style: none;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 23px;
-	font-weight: 100;
+	font-weight: bold;
 	color: rgb(255, 255, 255);
 }
 
@@ -166,7 +169,7 @@ aricle#front {
 #notice, #board {
 	float: left;
 	width: 600px;
-	margin: 15px 0 0 20px;
+	margin: 50px 0 0 20px;
 }
 
 #notice h3, #board h3 {
@@ -260,7 +263,7 @@ aricle#front {
 }
 
 footer {
-	margin: 50px 0 0 0;
+	margin: 0 0 0 0;
 	height: 80px;
 	background-image: url(); /* 이미지*/
 	background-repeat: no-repeat;
