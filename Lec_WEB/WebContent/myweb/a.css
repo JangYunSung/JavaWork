@@ -1,0 +1,291 @@
+@charset "UTF-8";
+
+*{
+	box-sizing: border-box;
+}
+
+
+body::after{
+	width: 100%;
+	height: 100%;
+	content: "";
+	background: url("image/bowling.jpg");
+	background-repeat: repeat;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 0px; 
+	margin: 0px;
+	z-index: -1;
+	opacity: 0.5;
+	
+}
+
+
+
+
+#wrap {
+	width: 1268px;
+	text-align: left;
+	margin: 0;
+	margin-right: auto;
+	margin-left: auto;
+	background-image: url("image/aaaz.png");/* 이미지*/
+	background-repeat: repeat-y;
+	min-height: 780px;
+}
+
+#logo {
+	width: 265px;
+	float: left;
+	margin: 40px 0 0 40px; /*위에서부터 시계방향으로 설정*/
+}
+
+header {
+	height: 151px;
+	margin: 0;
+	padding: 0;
+}
+
+nav#top_menu {
+	width: 900px;
+	float: right;
+	margin: 50px 20px 0 0;
+}
+
+nav#top_menu ul {
+	list-style: none;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 23px;
+	font-weight: 100;
+	color: rgb(255, 255, 255);
+}
+
+nav#top_menu ul li {
+	float: left;
+	margin: 0 5px;
+}
+
+nav#top_menu a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+	display: block;
+	height: 20px;
+	padding: 10px;
+}
+
+nav#top_menu a:hover {
+	background-image: url();/* 이미지*/
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
+
+#login {
+	float: right;
+	margin: 20px 64px 0 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	word-spacing: 5px;
+}
+
+#login a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+
+#login a:hover {
+	color: #F90;
+}
+
+.clear {
+	clear: both;
+}
+
+
+#main_img img {
+	margin: 9px 0 0 0;
+}
+
+aricle#front {
+	margin: 5px 0 5px 0;
+}
+
+#solution {
+	border: solid 1px #FFFFFF;
+	width: 1268px;
+	min-height: 150px;
+	background: #ebebeb;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 0 0 0 20px;
+}
+
+#ggong, #security, #payment {
+	width: 33%;
+	float: left;
+	padding: 10px;
+}
+
+
+
+#ggong h3, #security h3, #payment h3 {
+	font-family: seo;
+	font-size: 25px;
+	font-weight: 600;
+	color: rgb(0, 0, 0);
+	margin: 0 0 10px 80px;
+}
+
+#ggong p, #security p, #payment p {
+	font-family: seo;
+	font-size: 20px;
+	color: #333;
+	margin: 0 0 0 80px;
+}
+
+#ggong {
+	
+	background-repeat: no-repeat;
+	background-position: left 15px;
+	border-right: 1px solid rgb(0, 0, 0) ;
+}
+
+#security {
+
+	background-repeat: no-repeat;
+	background-position: left 15px;
+	border-right: 1px solid rgb(0, 0, 0);
+}
+
+#payment {
+	
+	background-repeat: no-repeat;
+	background-position: left 15px;
+}
+
+#notice, #board {
+	float: left;
+	width: 600px;
+	margin: 15px 0 0 20px;
+}
+
+#notice h3, #board h3 {
+	font-family: seo;
+	font-size: 40px;
+	font-style: italic;
+	font-weight: normal;
+
+	width: 600px;
+	height: 24px;
+	
+	background-repeat: no-repeat;
+	padding: 5px 10px 15px 22px;
+}
+
+#notice .orange {
+	color: #f26522;
+}
+
+#board .brown {
+	color: #827b00;
+}
+
+#notice dt {
+	font-family: "Times New Roman", Time, serif;
+	font-size: 24px;
+	margin: 5px 0;
+	color: #F00;
+}
+
+#notice dt a {
+	color: #F00;
+	text-decoration: none;
+}
+
+#notice dt a:hover {
+	color: #F90;
+	text-decoration: underline;
+}
+
+#notice dd {
+	margin-left: 0;
+	color: #333;
+	font-size: 24px;
+}
+
+#notice dd a {
+	color: #333;
+	text-decoration: none;
+}
+
+#notice dd a:hover {
+	color: #F90;
+	text-decoration: underline;
+}
+
+#board {
+	padding-left: 30px;
+}
+
+#board table {
+	width: 400px;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#board td {
+	padding: 6px 4px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #999;
+}
+
+#board td.contxt {
+	background-image: url();/* 이미지*/
+	background-repeat: no-repeat;
+	background-position: left center;
+	padding-left: 15px;
+	text-align: left;
+	color: #333;
+}
+
+#board a {
+	color: #333;
+	text-decoration: none;
+}
+
+#board a:hover {
+	text-decoration: none;
+	color: #F90;
+}
+
+footer {
+	margin: 50px 0 0 0;
+	height: 80px;
+	background-image: url(); /* 이미지*/
+	background-repeat: no-repeat;
+	background-position: 40px center;
+}
+
+footer hr {
+	width: 900px;
+	margin: 0 0 0 15px; 
+	margin: 0 0 0 35px;
+}
+
+footer #copy {
+	font-family: seo;
+	width: 450px;
+	margin: 20px 0 0 190px;
+	float: left;
+}
+
+footer #social {
+	width: 130px;
+	margin: 20px 20px 0 0;
+	float: right;
+}
+
+footer #social img {
+	margin: 0 7px;
+}

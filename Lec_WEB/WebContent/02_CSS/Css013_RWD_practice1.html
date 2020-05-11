@@ -1,87 +1,168 @@
-
-<!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>Responsive Form</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="CSS/RWD7.css" rel="stylesheet" type="text/css">
+<title>practice</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+@charset "UTF-8";
+
+* {
+	box-sizing: border-box;  /* RWD 필수 */
+}
+
+.header{
+	background-color : #ba63e6;
+	border: 4px solid #ffffff;
+
+}
+
+
+.clear{
+	clear: both;
+}
+
+
+.menu {
+	list-style-type: none;
+    padding: 15px;
+    margin-top: 15px ;
+    background-color: #7be677;
+
+}
+
+
+
+
+
+.aside {
+	background-color: #eb84c9;
+	height: 300px;
+}
+
+.article {
+	background-color: bisque; 
+	border: 3px solid #ffffff;
+	margin-top: 8px;
+}
+
+.footer{
+	background-color: #ee691c;
+	margin-top: 8px;
+}
+
+
+[class*="col-"]{
+	float: left;
+    padding: 15px;
+
+}
+
+/* 2: 600 px 까지 : mobile */
+@media screen and (max-width: 600px){
+	/* Tablet */
+	.col-0-a {display: none;}
+    .col-1-a {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-2-a {width: 16.66%; }  /* 2칸 짜리 폭 */
+    .col-3-a {width: 25%;}
+    .col-4-a {width: 33.33%;}
+    .col-5-a {width: 41.66%;}
+    .col-6-a {width: 50%;}
+    .col-7-a {width: 58.33%;}
+    .col-8-a {width: 66.66%;}
+    .col-9-a {width: 75%;}
+    .col-10-a {width: 83.33%;}
+    .col-11-a {width: 91.66%;}
+    .col-12-a {width: 100%;}
+}
+
+
+
+
+@media screen and (min-width: 600px){
+    /* Tablet */
+    .col-m-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-m-2 {width: 16.66%; }  /* 2칸 짜리 폭 */
+    .col-m-2-a {width: 16.66%; height: 300px;}  /* 2칸 짜리 폭 */
+    .col-m-2-b {width: 16.66%; height: 150px;}  /* 2칸 짜리 폭 */
+    .col-m-3 {width: 25%; height: 57px;}
+    .col-m-4 {width: 33.33%;}
+    .col-m-5 {width: 41.66%;}
+    .col-m-6 {width: 50%;}
+    .col-m-7 {width: 58.33%;}
+    .col-m-8 {width: 66.66%; }
+    .col-m-9 {width: 75%; height: 57px;}
+    .col-m-10 {width: 83.33%;}
+    .col-m-11 {width: 91.66%;}
+    .col-m-12 {width: 100%;}
+}
+
+/* 3: 768 px 이상 : pc */
+@media screen and (min-width: 768px){
+    .col-1 {width: 8.33%; }  /* 1칸 짜리 폭 */
+    .col-2 {width: 16.66%;  }  /* 2칸 짜리 폭 */
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%; }
+    .col-4-a {width: 33.33%; height: 95px;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+}
+
+
+
+</style>
+
+
+
 </head>
 <!-- form 또한 reponsive 하게 작성 가능 -->
 <body>
+<!-- header -->
+<div class="header col-0-a col-m-2 col-4">
+	<h1></h1>
+</div>
 
-<h2>Responsive Form</h2>
-<p>브라우저를 늘렸다 줄였다 해보기</p>
+<div class="header col-12-a col-m-10 col-8 ">
+	<h1></h1>
+</div>
 
+<div class="clear" ></div>
+
+<!-- menu -->
+<div class="menu col-12-a col-m-2-a " >
+
+</div>
 
 <!-- TODO : class 설정 -->
 
-<div class="container">
-  <form action="https://www.w3schools.com/action_page.php">
-    <div class="row">
-      <div class="col-3">
-        <label for="fname">First Name</label>
-      </div>
-      <div class="col-9">
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-3">
-        <label for="lname">Last Name</label>
-      </div>
-      <div class="col-9">
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-3">
-        <label for="country">Country</label>
-      </div>
-      <div class="col-9">
-        <select id="country" name="country">
-          <option value="australia">Australia</option>
-          <option value="canada">Canada</option>
-          <option value="usa">USA</option>
-        </select>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="col-3">
-        <label for="subject">Subject</label>
-      </div>
-      <div class="col-9">
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-      </div>
-    </div>
-    
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
+<!-- aside -->
+<div class="col-12-a col-m-8 col-6">
+	<div class="aside">
+
+	</div>
+</div>
+<!-- article -->
+<div>
+	<div class="article col-4-a col-m-2-b col-4-a"></div>
+	<div class="article col-4-a col-m-2-b col-4-a"></div>
+	<div class="article col-4-a col-m-3  col-4-a" ></div>
+</div>
+
+<!-- footer -->
+<div class="footer col-12-a col-m-9 col-12">
+
+</div>
+   
+
   </form>
 </div>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
