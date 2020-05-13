@@ -41,21 +41,69 @@
     $title2.css({'opacity' : 0});
     $form.css({'left' : '370px'});
 
-    $boat.animate({'left' : '20px'}, 2000, function(){
+    // 방법1 : animate() + callback
+    // $boat.animate({'left' : '20px'}, 2000, function(){
+    //     loopBoat();
+    //     $questionMark.delay(500).animate({'opacity': 1}, 1000, function(){
+    //          $title1.animate({'opacity' : 1}, 1000, function(){
+    //             $title2.animate({'opacity' : 1}, 1000, function(){
+    //                 $form.animate({'left' : 0}, 500); // end $form
+    //             }); // end $title2
+    //          }); // end $title1  
+    //     }); // end $questionMark
+    // }); // end $boat
+
+    // 방법2 : $.when()   .then() 사용
+    /*
+    $.when($boat.animate({'left' : '20px'}, 2000))
+        .then(function(){
+            loopBoat();
+            return $.when($questionMark.delay(500).animate({'opacity': 1}, 1000))
+        })
+        .then(function(){
+            return $.when($title1.animate({'opacity' : 1}, 1000));
+        })
+        .then(function(){
+            return $.when($title2.animate({'opacity' : 1}, 1000));
+        })
+        .then(function(){
+            //$form.animate({'left' : 0}, 500);
+            $form.animate({'left' : 0}, 500, reload);
+        })
+    ;
+    */
+
+    // 방법3 : 단일 애니메이션의 연속인 경우 promise() 만으로 가능.
+    $boat.animate({'left' : '20px'}, 2000).promise()
+    .then(function(){
         loopBoat();
-        $questionMark.delay(500).animate({'opacity': 1}, 1000, function(){
-             $title1.animate({'opacity' : 1}, 1000, function(){
-                $title2.animate({'opacity' : 1}, 1000, function(){
-                    $form.animate({'left' : 0}, 500); // end $form
-                }); // end $title2
-             }); // end $title1  
-        }); // end $questionMark
-    }); // end $boat
+        return $questionMark.delay(500).animate({'opacity': 1}, 1000).promise();
+    })
+    .then(function(){
+        return $title1.animate({'opacity' : 1}, 1000).promise();
+    })
+    .then(function(){
+        return $title2.animate({'opacity' : 1}, 1000).promise();
+    })
+    .done(function(){
+        $form.animate({'left' : 0}, 500, reload);
+    })
+;
+
+
+
+
 
     function loopBoat(){
         $boat
             .animate({'bottom' : '15px'}, 500)
             .animate({'bottom' : '25px'}, 500, loopBoat);
+    }
+
+    function reload(){
+        setTimeout(function(){
+            location.reload();
+        }, 5000);
     }
 
 

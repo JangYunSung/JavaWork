@@ -73,13 +73,14 @@ $(document).ready(function(){
 		  // $.when() 사용
 		  // 이벤트들이 끝나면 수행하는 Promise 객체 리턴
 		  // thenable object (다른말로 deferred object)
-		  $box1.animate({left : "200px"}, 1000);
-		  $box2.animate({top : "0px"}, 1500);
 
-		  $.when($box1, $box2).then(function(){
-			  //alert("완료!");
-			  $box3.animate({top: "150px"}, 2000);
-		  })
+		  $.when($box1.animate({left : "200px"}, 1000))
+			.then(function(){
+				return $.when($box2.animate({top : "0px"}, 1500));
+			})
+			.then(function(){
+				return $box3.animate({top: "150px"}, 2000);
+			})
 		  ;
 
 		  //

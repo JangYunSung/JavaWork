@@ -23,6 +23,7 @@ table {
 
 table tr td{
     height: 400px;
+    background-color: lightblue;
 }
 
 table tr td#a{

@@ -16,8 +16,11 @@ body {
 	background-position: 50% 50%;
 	background-attachment: fixed;
 	background-size: 100% 100%;
+	padding-top: 200px;
 }
-
+#dldldl{
+	margin: 0 auto;
+}
 
 
 #wrap {
@@ -30,6 +33,40 @@ body {
 	margin-left: auto;
 
 }
+
+#sze{
+	height: 100%;
+}
+
+#main_img {
+	width: 1800px;
+    position: relative;
+    height: 800px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+}
+
+#main_img ul {
+    position: absolute;
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+}
+
+#main_img ul li {
+    float: left;
+    height: 1000px;
+    margin: 0;
+    padding: 0;
+}
+
+#mainimg{
+    margin: 9px 0 0 0;
+    height: 176px;
+}
+
+
 
 
 
@@ -44,27 +81,35 @@ article#front {
 
 
 
-#logo {
+#logo img{
 	width: 200px;
+	height: 150px;
 	float: left;
-	margin: 0px 0 0 40px; /*위에서부터 시계방향으로 설정*/
+	float: 
 }
+.nav-up { top: -200px; }
+
 
 header {
+	width: 1268px;
 	height: 200px;
 	margin: 0;
 	padding: 0;
 	background-image: url("../image/aaaz.png");/* 이미지*/
 	background-repeat: repeat-y;
-	opacity: 0.7;
-	
+	opacity: 0.8;
+	position: fixed;
+	top: 0;
+	z-index: 4;
+	transition: top 0.2s ease-in-out;
+
 }
 
 
 
 nav#top_menu {
-	
-	width: 900px;
+
+	width: 1000px;
 	float: right;
 	
 }
@@ -78,7 +123,7 @@ nav#top_menu ul {
 }
 
 nav#top_menu ul li {
-	
+	float: center;
 }
 
 nav#top_menu a {
@@ -94,6 +139,7 @@ nav#top_menu a:hover {
 	background-image: url("../image/bowlinglogo.jpg");
 	opacity: 1;
 	background-repeat: no-repeat;
+	height: 20px;
 	/* background-image: url("../image/blue.gif"); */
 	/* background-position: bottom; */
 }
@@ -120,9 +166,6 @@ nav#top_menu a:hover {
 }
 
 
-#main_img img {
-	margin: 9px 0 0 0;
-}
 
 
 
@@ -321,3 +364,5 @@ footer #social {
 footer #social img {
 	margin: 0 7px;
 }
+
+
