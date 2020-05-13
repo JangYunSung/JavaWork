@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입 2단계 -정보입력</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="CSS/b.css" rel="stylesheet" type="text/css">
+</head>
+<!-- form 또한 reponsive 하게 작성 가능 -->
+
+<body>
+    <div id="logo">
+        <img src="image/attachment_21722465.png" width="300" height="150" alt="bowlaing" onclick="window.location.href='index.html'"/>
+    </div>
+    <div class="clear"></div>
+    <h2>회원가입</h2>
+    
+    
+    <!-- TODO : class 설정 -->
+    
+    <div>
+
+        <form>
+
+            <table>
+                <tr>
+                    <td>이름</td>
+                    <td> <input type="text" placeholder="이름" class="col-5 col-9-a"></td>
+                </tr>
+                <tr>
+                    <td>아이디</td>
+                    <td><input type="text" name="user_id" placeholder="아이디" class="col-5 col-9-a" /></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td><input type="text" name="user_pw" placeholder="비밀번호" class="col-5 col-9-a" /></td>
+                </tr>
+                <tr>
+                    <td>비밀번호 확인</td>
+                    <td><input type="text" name="user_pw2" placeholder="비밀번호 확인" class="col-5 col-9-a" /></td>
+                </tr>
+                <tr>
+                    <td>나이</td>
+                    <td><input type="text" id="lname" name="lastname" placeholder="나이" class="col-5 col-9-a"></td>
+                </tr>
+                <tr>
+                    <td>
+                        성별
+                    </td>
+                    <td>
+                        <input type="radio">남
+                        <input type="radio">여
+                    </td>
+                </tr>
+                <tr>
+                    <td>주소:</td>
+                    <td> <input type="text" class="col-5 col-9-a"><br><input type="button" value="주소찾기"><br>
+                        <input type="text" size="40" maxlength="35" name="BillAddress1" class="col-8 col-11-a">
+                            <input type="text" size="40" maxlength="35" name="BillAddress1" class="col-8 col-11-a"></td>
+                </tr>
+                <br>
+                <br>
+                <tr>
+                </tr>
+                <tr>
+                    <td>휴대폰:</td>
+                    <td><span><select class="col-3">
+                                <option>010</option>
+                                <option>070</option>
+                                <option>031</option>
+                            </select>
+                            <input type="text" class="col-4"><input type="text" class="col-4">
+        
+                        </span></td>
+                </tr>
+                <td></td>
+                <td> <span> 반드시 본인인증을 하셔야 합니다.</span>
+                    <input type="button" value="휴대폰인증" /></td>
+                <tr>
+                    <td>이메일:</td>
+                    <td>
+                        <input type="text" class="col-5 col-9-a" >
+                        <select class="col-5">
+                            <option>nate.com</option>
+                            <option>naver.com</option>
+                            <option>daum.net</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>직업</td>
+                    <td><select name="user_job" class="col-3 col-4-a">
+                            <option value="student">학생</option>
+                            <option value="teacher">교사</option>
+                            <option value="developer">개발자</option>
+                            <option value="publisher">퍼블리셔</option>
+                            <option value="driver">운전사</option>
+                            <option value="architecture">건축가</option>
+                            <option value="actor">배우</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>생년월일</td>
+                    <td><select name="user_birth_year">
+                            <option value="2000" selected>2000</option>
+                            <option value="2001" selected>2001</option>
+                            <option value="2002" selected>2002</option>
+                            <option value="2003" selected>2003</option>
+                            <option value="2004" selected>2004</option>
+                            <option value="2000" selected>2005</option>
+                            <option value="2001" selected>2006</option>
+                            <option value="2002" selected>2007</option>
+                            <option value="2003" selected>2008</option>
+                            <option value="2004" selected>2009</option>
+                            <option value="2000" selected>2010</option>
+                            <option value="2001" selected>2011</option>
+                            <option value="2002" selected>2012</option>
+                            <option value="2003" selected>2013</option>
+                            <option value="2004" selected>2014</option>
+                            <option value="2000" selected>2015</option>
+                            <option value="2001" selected>2016</option>
+                            <option value="2002" selected>2017</option>
+                            <option value="2003" selected>2018</option>
+                            <option value="2004" selected>2019</option>
+                        </select>
+                        년
+                        <select name="user_birth_month">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                        월
+                        <select name="user_birth_day" >
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                        </select>
+                        일
+                    </td>
+                </tr>
+            </table>
+            <div class="row">
+                <input type="submit" value="Submit" class="col-5 col-9-a">
+            </div>
+        </form>
+
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+
+</html>

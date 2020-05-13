@@ -6,48 +6,53 @@
     <title>bowling</title>
     <link href="CSS/a.css" rel="stylesheet" type="text/css">
 </head>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <body>
     <div id="wrap">
         <header>
             <!-- 헤더 들어가는 곳 -->
             <div id="login">
-                <a href="#"><input type="button" value="회원 로그인" onclick="window.open('login.html')"></a> |
-                <a href="#"><input type="button" value="회원 가입" onclick="window.open('join.html')"></a>
+                <a href="#"><input type="button" value="회원 로그인" onclick="window.location.href='login.html'"></a> |
+                <a href="#"><input type="button" value="회원 가입" onclick="window.location.href='agreecheckbox.html'"></a>
 
 
             </div>
             <div class="clear"></div>
 
             <div id="logo">
-                <img src="image/attachment_21722465.jpg" width="200" height="100" alt="bowling" />
+                <img src="image/attachment_21722465.png" width="300" height="150" alt="bowlaing"
+                    onclick="window.location.href='index.html'" />
             </div>
 
             <nav id="top_menu">
                 <!-- 네비게이션 들어가는 곳 -->
                 <ul>
                     <li><a href="#">공지사항</a></li>
-                    <li><a href="#">찾아오시는길</a></li>
-                    <li><a href="#">볼링동영상</a></li>
+                    <li><a href="videoG.html">볼링동영상</a></li>
                     <li><a href="#">대회일정</a></li>
-                    <li><a href="#">클럽홍보관</a></li>
                     <li><a href="#">자유게시판</a></li>
                 </ul>
             </nav>
         </header>
-        <div class="clear"></div>
-        <iframe box-sizing: border-box; width="1268" height="713"
-            src="https://www.youtube.com/embed/VQO4HfhS18k?autoplay=1&amp;loop=1;playlist=fn5OBAfHLKQ;mute=1"
-            frameborder="0"></iframe>
+        <div class="box"> 
+            <video> 
+                 <!-- <source src="https://static.playoverwatch.com/video/pages/home/header-703354f97f.mp4" type="video/mp4"/>  -->
+                 <!-- <source src="https://thumbs.gfycat.com/ConcernedBlondCricket-mobile.mp4"/>  -->
+                 <!-- <source src="https://steamcdn-a.akamaihd.net/steam/apps/256769039/movie480.webm?t=1575545461"/>  -->
+                 <!-- <source src="https://thumbs.gfycat.com/AromaticGlisteningEmperorshrimp-mobile.mp4"/>  -->
+                 <!-- <source src="https://thumbs.gfycat.com/BetterAdorableGoose-mobile.mp4"/>  -->
+                 <source src="https://thumbs.gfycat.com/WetBackAstrangiacoral-mobile.mp4"/> 
+            </video> 
+        </div>
+        <!-- <div id="fii">
+            <iframe box-sizing: border-box; width="1268" height="713" opacity: 1;
+                src="https://www.youtube.com/embed/VQO4HfhS18k?autoplay=1&amp;loop=1;playlist=fn5OBAfHLKQ;mute=1"
+                frameborder="0"></iframe>
+        </div> -->
         <article id="front">
 
-            <!-- 메인 콘텐츠 들어가는 곳 -->
-
-
-
-
+            <div class="clear"></div>
             <div id="ss">
-                <div class="clear"></div>
                 <div id="notice">
                     <h3>
                         <span class="orange">대회일정</span> 및 공지사항</h3>
@@ -79,7 +84,7 @@
                     <table>
                         <tr>
                             <td class="contxt"><a>초보자 꿀팁 나도 잘할수 있다!</a></td>
-                            <td>20120.07.31</td>
+                            <td>2020.05.18</td>
                         </tr>
                         <tr>
                             <td class="contxt"><a>볼링클럽에서 친구처럼 가족처럼 함께하실분</a> </td>
@@ -100,58 +105,66 @@
                     </table>
                 </div>
             </div>
-        </article>
 
-        <div class="clear"></div>
+            <div class="clear"></div>
 
-        <div id="ggong">
-            <h3>지공하는곳</h3>
-                <p><img src="image/bowlingggong.jpg" style="width: 100px;"></p>
-                <p>지공하는 방법) <br>
-                    1. 훅의 크기 <br>
-                    2. 볼이 회전해 나가는 거리 <br>
-                    3. 빠른 회전 시기를 빠르게 한다.
-                </p>
+            <div class=drdr>
+                <div id="ggong">
+                    <h3>지공하는곳</h3>
+                    <p><img src="image/bowlingggong.jpg" style="width: 100px; "></p>
+                    <p class="iz">지공할때 생각할 것</p>
+                    <p>
+                        1. 훅의 크기 <br>
+                        2. 볼이 회전해 나가는 거리 <br>
+                        3. 빠른 회전 시기를 빠르게 한다.
+                    </p>
+                </div>
+                <div id="security">
+                    <h3>볼링공 & 장비</h3>
+                    <p> 장비<br>
+                        1) 볼링공 <br>
+                        2) 볼링화 <br>
+                        3) 아대 <br>
+                        4) 리프팅테이프 <br>
+                        5) 볼링가방 <br>
+                        6) 유니폼 <br>
+
+                    </p>
+                </div>
+
+                <div id="payment">
+                    <h3>볼링 물품</h3>
+                    <P><a href="https://bowlingmall.co.kr/index.html">1) 볼링몰"Click"</a></p>
+                    <P><a href="http://www.happybowling.co.kr/">2) 해피볼링"Click"</a></p>
+                    <P><a href="https://www.abowl.co.kr/main/index.php">3) 에이볼"Click"</a></p>
+                    <P><a href="http://www.mybowling.co.kr/FrontStore/iStartPage.phtml">3) 마이볼링"Click"</a></p>
+
+                      
+                </div>
             </div>
-            
-            <div id="security">
-                <h3>볼링공 & 장비</h3>
-                <p> 장비<br>
-                    1) 볼링공 <br>
-                    2) 볼링화 <br>
-                    3) 아대 <br>
-                    4) 리프팅테이프 <br>
-                    
-                </p>
-            </div>
-            
-            <div id="payment">
-                <h3>중고 물품</h3>
-                <p>
-                    중고물품 파는곳<br>
-                    1) "링크"Click<br>
-                    2) "링크"Click<br>
-                    3) "링크"Click<br>
-                    4) "링크"Click<br>
-                </p>
-            </div>
-            
             <div class="clear"></div>
             <!-- 푸터 들어가는 곳 -->
-            <footer>
-            <hr>
-            <div id="copy">
-                All contents 2020 05 11 <br>
-                Contact mail : ahqksu45@gmail.com Tel: +82 6621 2124 Fax +82 000 0000
-            </div>
-            <div id="social">
-                <img src="image/facebook.gif" width="33" height="33" alt="Facebook">
-                <img src="image/twitter.gif" width="33" height="34" alt="Twitter">
-            </div>
-        </footer>
 
     </div>
+    </article>
+    <!-- 메인 콘텐츠 들어가는 곳 -->
 
+
+    <footer>
+        <hr>
+        <div id="copy">
+            All contents 2020 05 11 <br>
+            Contact mail : ahqksu45@gmail.com <br>
+            Tel: +82 6621 2124 Fax +82 000 0000
+        </div>
+        <div id="social">
+            <a href="https://www.facebook.com/"><img src="image/facebook.gif" width="33" height="33" alt="Facebook"></a>
+            <a href="https://twitter.com/explore"><img src="image/twitter.gif" width="33" height="34" alt="Twitter"></a>
+        </div>
+    </footer>
+
+
+    <div class="clear"></div>
 </body>
-
+<script src="js/event.js"></script>
 </html>

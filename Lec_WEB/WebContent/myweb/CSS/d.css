@@ -1,0 +1,39 @@
+
+
+#player { width:400px;}
+#player_screen { position:relative; width:400px; height:225px; }
+#player_screen iframe { position:relative; width:400px; height:225px; }
+#player_screen .top_img { width:400px; height:225px; position:absolute; top:0px; left:0px; cursoor:pointer; background:#e5e5e5;}
+#player_screen .top_img + iframe { display:none }
+#player_text dt, #player_text dd { margin:0; padding:0;}
+
+dl.movs { width:100px; float:left; border:solid 1px #ccc;}
+dl.movs + dl.movs { margin-left:10px;}
+dl.movs dt, dl.movs dd { margin:0; padding:0;}
+dl.movs dd.desc, dl.movs dd.url { display:none; }
+
+
+
+
+table {
+    width: 1268px;
+    border: 0;
+    
+}
+
+table tr td{
+    height: 400px;
+}
+
+table tr td#a{
+    background-color:cornflowerblue;
+    text-align: center;
+    height: 20px;
+    
+}
+    
+
+table td iframe{
+    width: 100%;
+    height: 100%;
+}

@@ -27,7 +27,7 @@ body {
 }
 
 header {
-	height: 151px;
+	height: auto;
 	margin: 0;
 	padding: 0;
 }

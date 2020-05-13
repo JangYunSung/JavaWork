@@ -4,34 +4,40 @@
 	box-sizing: border-box;
 }
 
+/* .box{width:1268px; height: 973px;} 
+.box video{widows: 100%; height: 973px;} 동영상크기는 맘대로 하세영 */
+.box{width:1268px; height: 713px;} 
+.box video{widows: 100%; height: 713px;} /*동영상크기는 맘대로 하세영*/
 
-#wrap::after{
-	width: 100%;
+body {
 	height: 100%;
-	content: "";
-	background: url("../image/bowling.jpg");/* 이미지*/
-	background-repeat: repeat-y repeat-x;
-	position: absolute;
-	top: 0;
-	left: 0;
+	background-image: url("../image/bowling.jpg");
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+}
+
+
+
+#wrap {
+	font-size: large;
+	width: 1268px;
+	height: auto;
+	text-align: left;
 	margin: 0;
-	z-index: -1;
-	opacity: 0.3;
-	
+	margin-right: auto;
+	margin-left: auto;
+
 }
 
 
 
 
-#wrap {
-	width: 1268px;
-	text-align: left;
-	margin: 0;
-	margin-right: auto;
-	margin-left: auto;
-	background-image: url("image/aaaz.png");/* 이미지*/
+article#front {
+	background-image: url("../image/aaaz.png");/* 이미지*/
 	background-repeat: repeat-y;
-
+	opacity: 0.7;
 }
 
 
@@ -39,48 +45,57 @@
 
 
 #logo {
-	width: 265px;
+	width: 200px;
 	float: left;
-	margin: 40px 0 0 40px; /*위에서부터 시계방향으로 설정*/
+	margin: 0px 0 0 40px; /*위에서부터 시계방향으로 설정*/
 }
 
 header {
-	height: 151px;
+	height: 200px;
 	margin: 0;
 	padding: 0;
+	background-image: url("../image/aaaz.png");/* 이미지*/
+	background-repeat: repeat-y;
+	opacity: 0.7;
+	
 }
 
+
+
 nav#top_menu {
+	
 	width: 900px;
 	float: right;
-	margin: 50px 20px 0 0;
+	
 }
 
 nav#top_menu ul {
 	list-style: none;
 	font-family: Verdana, Geneva, sans-serif;
-	font-size: 23px;
+	font-size: 20px;
 	font-weight: bold;
-	color: rgb(255, 255, 255);
+	color: rgb(0, 0, 0);	
 }
 
 nav#top_menu ul li {
-	float: left;
-	margin: 0 5px;
+	
 }
 
 nav#top_menu a {
 	text-decoration: none;
-	color: rgb(0, 0, 0);
+	color: #333;
 	display: block;
-	height: 20px;
-	padding: 10px;
+	padding: 50px;
+	float: left;
 }
 
+
 nav#top_menu a:hover {
-	background-image: url();/* 이미지*/
-	background-repeat: repeat-x;
-	background-position: bottom;
+	background-image: url("../image/bowlinglogo.jpg");
+	opacity: 1;
+	background-repeat: no-repeat;
+	/* background-image: url("../image/blue.gif"); */
+	/* background-position: bottom; */
 }
 
 #login {
@@ -109,9 +124,7 @@ nav#top_menu a:hover {
 	margin: 9px 0 0 0;
 }
 
-aricle#front {
-	margin: 5px 0 5px 0;
-}
+
 
 #solution {
 	border: solid 1px #FFFFFF;
@@ -133,24 +146,26 @@ aricle#front {
 
 #ggong h3, #security h3, #payment h3 {
 	font-family: seo;
-	font-size: 25px;
 	font-weight: 600;
 	color: rgb(0, 0, 0);
-	margin: 0 0 10px 80px;
+	margin: 0 0 10px ;
 }
 
 #ggong p, #security p, #payment p {
 	font-family: seo;
-	font-size: 20px;
+	
 	color: #333;
-	margin: 0 0 0 80px;
+	margin: 0 0 0 0px;
+}
+
+#ggong p{
+	float: left;
 }
 
 #ggong {
 	
 	background-repeat: no-repeat;
 	background-position: left 15px;
-	border-right: 1px solid rgb(0, 0, 0) ;
 }
 
 #security {
@@ -158,6 +173,7 @@ aricle#front {
 	background-repeat: no-repeat;
 	background-position: left 15px;
 	border-right: 1px solid rgb(0, 0, 0);
+	border-left: 1px solid rgb(0, 0, 0);
 }
 
 #payment {
@@ -166,23 +182,37 @@ aricle#front {
 	background-position: left 15px;
 }
 
-#notice, #board {
+
+#notice , #board {
 	float: left;
-	width: 600px;
-	margin: 50px 0 0 20px;
+	
 }
+
+
+#notice {
+	width: 400px;
+	margin: 50px 0 0 50px;
+}
+
+#board{
+	width: 700px;
+	margin: 50px 0 50px 50px;
+}
+
+
+
 
 #notice h3, #board h3 {
 	font-family: seo;
 	font-size: 40px;
 	font-style: italic;
 	font-weight: normal;
-
-	width: 600px;
+	
+	width: auto;
 	height: 24px;
 	
 	background-repeat: no-repeat;
-	padding: 5px 10px 15px 22px;
+	padding: 5px 10px 15px 0px;
 }
 
 #notice .orange {
@@ -225,13 +255,8 @@ aricle#front {
 	color: #F90;
 	text-decoration: underline;
 }
-
-#board {
-	padding-left: 30px;
-}
-
 #board table {
-	width: 400px;
+	width: 600px;
 	border-collapse: collapse;
 	text-align: center;
 }
@@ -253,6 +278,7 @@ aricle#front {
 }
 
 #board a {
+	
 	color: #333;
 	text-decoration: none;
 }
@@ -260,6 +286,9 @@ aricle#front {
 #board a:hover {
 	text-decoration: none;
 	color: #F90;
+}
+.iz{
+	font-size: larger;
 }
 
 footer {
@@ -271,9 +300,9 @@ footer {
 }
 
 footer hr {
-	width: 900px;
-	margin: 0 0 0 15px; 
-	margin: 0 0 0 35px;
+	width: 1268px;
+
+	margin: auto
 }
 
 footer #copy {
