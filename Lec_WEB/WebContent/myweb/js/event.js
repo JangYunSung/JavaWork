@@ -1,26 +1,15 @@
+//  $('#IMAGE').click(function() { $('#VIDEO').play(); });
 
 
-    //  $('#IMAGE').click(function() { $('#VIDEO').play(); });
 
-
-$(document).ready(function() { 
-        
-    var vid = $("video").get(0);
-    
-    $("video").on("click",function(){ 
-     vid.play(); 
-    }); 
-});
-
-
-// $("#video").on("ended", function() {
-//     var $video2=$("#video-1");
-//     $(window).scrollTop($video2.offset().top);
-//     $video2[0].play();
-//     });
-    
-    
 $(document).ready(function () {
+
+    var vid = $("video").get(0);
+
+    $("video").on("click", function () {
+        vid.play();
+    });
+
     var $main_img = $("#main_img").find("ul");
 
     var $main_imgWidth = $main_img.children().outerWidth(); //이미지의 폭
@@ -34,6 +23,10 @@ $(document).ready(function () {
     }, 4000); //다음 이미지로 롤링 애니메이션 할 시간차
 
     function rollingStart() {
+        // console.log($main_img);
+        // console.log($length);
+        // console.log($main_imgWidth * $length);
+        // console.log($main_imgWidth);
         $main_img.css("width", $main_imgWidth * $length + "px");
         $main_img.css("height", $main_imgHeight + "px");
         //alert(main_imgHeight);
@@ -50,39 +43,73 @@ $(document).ready(function () {
             //계속 롤링하는 배너
         });
     }
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function (event) {
+    didScroll = true;
 });
+setInterval(function () {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+    // Make sure they scroll more than delta 
+    if (Math.abs(lastScrollTop - st) <= delta)
+        return;
+    // If they scrolled down and are past the navbar, add class .nav-up. 
+    // This is necessary so you never see what is "behind" the navbar. 
+    if (st > lastScrollTop && st > navbarHeight) {
+        // Scroll Down 
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if (st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    lastScrollTop = st;
+}
+
+
+
+var loginBtn = document.getElementById("loginBtn");
+var modal = document.getElementById("id01");
+var close = document.getElementsByClassName("close")[0];
+var header = document.getElementById("headerz")
+
+loginBtn.onclick = function () {
+    modal.style.display = "block";
+    header.style.display = "none"
+}
+
+close.onclick = function () {
+    modal.style.display = "none";
+    header.style.display = "block"
+}
+
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        header.style.display = "block"
+    }
+}
+});
+
+
+// $("#video").on("ended", function() {
+//     var $video2=$("#video-1");
+//     $(window).scrollTop($video2.offset().top);
+//     $video2[0].play();
+//     });
 
 
 
 
 // Hide Header on on scroll down 
-var didScroll; 
-var lastScrollTop = 0; 
-var delta = 5; 
-var navbarHeight = $('header').outerHeight(); 
-
-$(window).scroll(function(event){ 
-    didScroll = true; }); 
-setInterval(function() { 
-    if (didScroll) { 
-        hasScrolled(); 
-        didScroll = false; 
-    } }, 250); 
-    function hasScrolled() { 
-        var st = $(this).scrollTop(); 
-        // Make sure they scroll more than delta 
-        if(Math.abs(lastScrollTop - st) <= delta) 
-        return; 
-        // If they scrolled down and are past the navbar, add class .nav-up. 
-        // This is necessary so you never see what is "behind" the navbar. 
-        if (st > lastScrollTop && st > navbarHeight){ 
-            // Scroll Down 
-            $('header').removeClass('nav-down').addClass('nav-up'); 
-        } else { 
-            // Scroll Up
-             if(st + $(window).height() < $(document).height()) { 
-                 $('header').removeClass('nav-up').addClass('nav-down'); 
-                } 
-            } 
-            lastScrollTop = st;
-         }
