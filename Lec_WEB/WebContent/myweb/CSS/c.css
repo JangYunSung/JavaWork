@@ -22,9 +22,11 @@ a {
     clear: both;
 }
 
+
 #joinForm {
+    
     width: auto;
-    margin: 0 auto;
+    margin: 0 200px;
 }
 
 ul.join_box {
@@ -91,4 +93,13 @@ ul.join_box {
 .agree {
     background-color: rgb(194, 149, 131);
     color: #fff
+}
+@media screen and (max-width: 600px){
+    
+    
+    #joinForm {
+    
+        width: auto;
+        margin: 0 auto;
+    }
 }

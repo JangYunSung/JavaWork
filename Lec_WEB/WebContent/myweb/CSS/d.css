@@ -12,12 +12,40 @@ dl.movs + dl.movs { margin-left:10px;}
 dl.movs dt, dl.movs dd { margin:0; padding:0;}
 dl.movs dd.desc, dl.movs dd.url { display:none; }
 
+header{
+    margin: 0 310px;
+    border-bottom: 2px solid darkgoldenrod;
+    
+}
 
+#logo{
+    padding-left: 500px;
+}
 
+header div span{
+    font-size: 50px;
+    font-style: oblique;
+    float: left;
+}
+
+.dzd {
+    float: left;
+    margin-left: 1050px;
+}
+
+/* header input[type="button"]{
+} */
+
+#logo img{
+    width:300px;
+    height:200px;
+    
+}
 
 table {
     width: 1268px;
     border: 0;
+    margin: 0 auto;
     
 }
 

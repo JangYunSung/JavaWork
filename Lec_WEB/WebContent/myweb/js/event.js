@@ -20,7 +20,7 @@ $(document).ready(function () {
     //정해진 초마다 함수 실행
     rollingId = setInterval(function () {
         rollingStart();
-    }, 4000); //다음 이미지로 롤링 애니메이션 할 시간차
+    }, 6000); //다음 이미지로 롤링 애니메이션 할 시간차
 
     function rollingStart() {
         // console.log($main_img);
