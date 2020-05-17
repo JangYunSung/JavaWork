@@ -1,0 +1,9 @@
+/* validate */
+input.error, text.error{
+	border:1px solid #ff4343;
+}
+label.error{
+	color: #ff4343;
+    font-weight: 400;
+    font-size: 0.9em;
+}

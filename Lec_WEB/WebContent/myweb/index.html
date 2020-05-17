@@ -10,7 +10,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> -->
-    <script src="js/event.js"></script>
 </head>
 
 
@@ -30,10 +29,10 @@
             <div class="container">
                 <!-- 로그인 form -->
                 <label for="uname"><b>아이디</b></label>
-                <input type="text" placeholder="아이디를 입력하세요" name="uname" required>
+                <input id="userId" type="text" placeholder="아이디를 입력하세요" name="uname" required>
 
                 <label for="psw"><b>비밀번호</b></label>
-                <input type="password" placeholder="비밀번호를 입력하세요" name="psw" required>
+                <input id="userPw" type="password" placeholder="비밀번호를 입력하세요" name="psw" required>
 
                 <button type="submit">로그인</button>
                 <label>
@@ -63,12 +62,39 @@
                 <img src="image/attachment_21722465.png" alt="bowlaing" onclick="window.location.href='index.html'" />
             </div>
             <nav id="top_menu">
-
                 <ul>
-                    <li><a href="#">공지사항</a></li>
-                    <li><a href="videoG.html">볼링동영상</a></li>
-                    <li><a href="#">대회일정</a></li>
-                    <li><a href="#">자유게시판</a></li>
+                    <div class="dropdown">
+                        <a class="eel">공 지 사 항</a>
+                        <div class="dropdown-content">
+                            <a href="#">대 회 일 정</a>
+                            <a href="#">볼 링 소 개</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <a class="eel">자 유 게 시 판</a>
+                        <div class="dropdown-content">
+                            <a href="videoG.html">동 영 상</a>
+                            <a href="#">게 시 글</a>
+                            <a href="#">사 진</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <a class="eel">마 음 의 소 리</a>
+                        <div class="dropdown-content">
+                            <a href="#">자주묻는질문</a>
+                            <a href="#">1:1문의</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown">
+                        <a class="eel">볼 링 자 료 실</a>
+                        <div class="dropdown-content">
+                            <a href="#">볼링교육자료</a>
+                            <a href="#">볼링잘치는법</a>
+                        </div>
+                    </div>
                 </ul>
             </nav>
         </header>
@@ -80,6 +106,7 @@
             <li><img src="http://bowlingmall.cafe24.com/2015main/201911_main_03.jpg" alt="img"></li>
         </ul>
     </div>
+    <script src="js/main.js"></script>
 
 
     <div id="wrap">
@@ -185,17 +212,12 @@
         <div class="containerz">
             <div class="box">
                 <img src="https://menu.mtn.co.kr/upload/article/2012/08/21/2012082114533574812_01_238.jpg">
-          
-            </div>
-            <div class="box">
-                <img
-                    src="https://lh3.googleusercontent.com/proxy/jBvy6kJrmQ3TujVi1RBDwbzXbP3zoqF63nfcAyGJVzHVo4ixcA_gIVOZAZz01fnS7UMdkqCgFWUaPSW2LCLCL58Q6HFK_noSLMFnJKU-r9LNbNg1rdVbC7D6BJTldddMnUAK0rtPqKn-tchTlsumBEWtdBMHwVLDpWzUqgYQfvZOfLJUWu-zUGGHnhc244_6ijqZaf8-kpRqOd-baeB7p_1lH7dvCxMWJeq65MWiDjo2yILrZMGqrxPfU8vT43GiJ6BqU243Ksx-ChLqr2vv38bx62dGgDxzr66sR828kaN8hX_PES2N_DpyqRhTBGifUkGsw6bEnLNi">
-               
+
             </div>
             <div class="box">
                 <img
                     src="https://scontent-lga3-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c135.0.810.810a/s640x640/73412325_788439731569005_4356584481627034148_n.jpg?_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=109&_nc_ohc=aWn6al6YjlIAX_anv8R&oh=32e1b56c18dbe34c0feafd0502ca48f5&oe=5ED34464">
-               
+
             </div>
             <div class="box">
                 <img

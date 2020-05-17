@@ -4,12 +4,16 @@
 
 $(document).ready(function () {
 
-    var vid = $("video").get(0);
-
-    $("video").on("click", function () {
-        vid.play();
+    $(".d004").click(function(){
+		$(".d04").fadeToggle(2000);
     });
 
+    // var vid = $("video").get(0);
+
+    // $("video").on("click", function () {
+    //     vid.play();
+    // });
+    
     var $main_img = $("#main_img").find("ul");
 
     var $main_imgWidth = $main_img.children().outerWidth(); //이미지의 폭
@@ -33,7 +37,7 @@ $(document).ready(function () {
         //배너의 좌측 위치를 옮겨 준다.
         $main_img.animate({
             left: -$main_imgWidth + "px"
-        }, 2000, function () { //숫자는 롤링 진행되는 시간이다.
+        }, 3000, function () { //숫자는 롤링 진행되는 시간이다.
             //첫번째 이미지를 마지막 끝에 복사(이동이 아니라 복사)해서 추가
             $(this).append("<li>" + $(this).find("li:first").html() + "</li>");
             //뒤로 복사된 첫번재 이미지는 필요 없으니 삭제.
@@ -76,6 +80,7 @@ function hasScrolled() {
     }
     lastScrollTop = st;
 }
+// Hide Header on on scroll down 
 
 
 
@@ -100,6 +105,22 @@ window.onclick = function (event) {
         header.style.display = "block"
     }
 }
+
+// var userId = document.fmField.userId;
+//     // 아이디 입력 유무 체크
+//     if(userId.value == '' || !(userId.value.length >= 3 && userId.value.length <= 12)) {
+//         window.alert("아이디를 입력하시오");
+//         document.fmField.uerId.focus();
+//         document.getElementById('userId').select();
+//         return false; // 아이디 입력이 안되어 있다면 submint 이벤트를 중지
+//     }
+//     var userPw = document.getElementById('userPw');
+//     // 암호 입력 유무 체크
+//     if(document.fmField.userPw.value == ''){
+//         alert('암호를 입력하세요.');
+//         userPw.focus();
+//         return false;
+//     }
 });
 
 
@@ -111,5 +132,3 @@ window.onclick = function (event) {
 
 
 
-
-// Hide Header on on scroll down 
