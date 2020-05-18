@@ -47,6 +47,7 @@ $(document).ready(function () {
             //계속 롤링하는 배너
         });
     }
+
 var didScroll;
 var lastScrollTop = 0;
 var delta = 5;
@@ -60,8 +61,9 @@ setInterval(function () {
         hasScrolled();
         didScroll = false;
     }
-}, 250);
+}, 200);
 
+// Hide Header on on scroll down 
 function hasScrolled() {
     var st = $(this).scrollTop();
     // Make sure they scroll more than delta 
@@ -80,7 +82,6 @@ function hasScrolled() {
     }
     lastScrollTop = st;
 }
-// Hide Header on on scroll down 
 
 
 
