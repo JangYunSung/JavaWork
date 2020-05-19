@@ -23,10 +23,8 @@ public class ServletDemo extends HttpServlet {
 		for(int cnt = 1; cnt <= 100; cnt++) {
 			sum += cnt;
 		}
-		
 		response.setContentType("text/html; charset=utf-8");
 		PrintWriter out = response.getWriter();
-		
 		out.println("<html>");
 		out.println("<head>");
 		out.println("<title>백까지 합</title>");
@@ -35,13 +33,10 @@ public class ServletDemo extends HttpServlet {
 		out.printf("100까지의 합 결과 : %d", sum);
 		out.println("</body>");
 		out.println("</html>");
-
-
-	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doPost() 호출 ");
+		System.out.println("doPost() 호출");
 		doGet(request, response);
 	}
 

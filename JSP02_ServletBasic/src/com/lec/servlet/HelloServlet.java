@@ -31,10 +31,10 @@ public class HelloServlet extends HttpServlet {
 		out.println("<!DOCTYPE html>");
 		out.println("<html lang='ko'>");
 		out.println("<head>");
-		out.println("<meta charset= 'utf-8'>");
-		out.println("<title> 서블릿 response</title>");
+		out.println("<meta charset='utf-8'>");
+		out.println("<title>서블릿 response</title>");
 		out.println("</head>");
-		out.println("<boby>");
+		out.println("<body>");
 		out.println("<h2>HTML문서 response</h2>");
 		out.println("</body>");
 		out.println("</html>");

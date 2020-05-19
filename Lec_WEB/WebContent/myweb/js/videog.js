@@ -25,7 +25,7 @@ $('#list .movs a').on('click', function (e) {
   $('#player_screen iframe').attr("src", $itemx_url + "&autoplay=1");
   $('#player_screen iframe').show();
   $('#player_text dt').html($itemx_tit);
-  $('#player_text dd').html($itemx_desc);.
+  $('#player_text dd').html($itemx_desc);
   if($player_top < $sc_top) {
     $('html, body').animate({
       scrollTop: $player_top
