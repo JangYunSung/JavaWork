@@ -15,11 +15,13 @@
 <p>위 라인의 내용은 sub 페이지의 내용입니다</p>
 
 <hr>
+<hr>
 <!-- Directive -->
 <h3>지금의 페이지는 include 페이지 입니다.</h3>
 <%@ include file="sub.jsp" %>
 <p>위 라인의 내용은 sub 페이지의 내용입니다</p>
 
+<hr>
 <hr>
 <%!
 	// 변수 선언
@@ -29,6 +31,9 @@
 <%@ include file="sub2.jsp" %>
 <%--<jsp:include page="sub2.jsp"/> --%>
 
+<hr>
+<hr>
+<hr>
 <jsp:include page="sub3.jsp">
 	<jsp:param value='<%= URLEncoder.encode(name, "utf-8") %>' name="name"/>
 	<jsp:param value="<%= age %>" name="age"/>

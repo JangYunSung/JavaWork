@@ -19,7 +19,7 @@ public class ServletForm extends HttpServlet {
 	public ServletForm() {
         super();
     }
-
+					// 타입이 HttpServletRequest !!!   HttpServletResponse!!!
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		

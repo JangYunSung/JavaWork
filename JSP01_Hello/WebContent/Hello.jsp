@@ -12,7 +12,7 @@
 <a href="page1.jsp">page1</a><br>
 <a href="./page2.jsp">page2</a><br>
 <a href="/page3.jsp">page3</a><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
 </html>
 

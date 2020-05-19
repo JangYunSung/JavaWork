@@ -12,7 +12,7 @@
 <a href="Hello.jsp">hello</a><br>
 <button onclick="history.back()">back</button>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
 </html>
 

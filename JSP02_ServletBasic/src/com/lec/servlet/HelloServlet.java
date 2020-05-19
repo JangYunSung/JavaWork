@@ -18,7 +18,7 @@ public class HelloServlet extends HttpServlet {
     public HelloServlet() {
         super();
     }
-
+    	// 새로고침 할때마다 doGet이 실행된다.
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("안녕하세요 첫번째 Servlet 입니다.");
 		

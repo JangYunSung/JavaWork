@@ -17,7 +17,7 @@
 아이디: <%= id %><br>
 비밀번호: <%= pw %><br>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
 </html>
 

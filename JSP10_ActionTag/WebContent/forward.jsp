@@ -14,7 +14,7 @@
 <jsp:forward page="sub.jsp"/>
 <p>위 라인의 내용은 sub 페이지의 내용입니다</p>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
 </html>
 
