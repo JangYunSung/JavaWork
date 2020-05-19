@@ -18,23 +18,24 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 
-		int a = sc.nextInt();
+		int a = 3;
 		int j = 0;
+		int b = 0;
 		for (int i = a; i > 0; i--) {
-			
-			for (j = i; j >= 0; j-=2) {
-				System.out.print("*");
-			
-			
+			if(b!=0) {
+			for (int k = b; k > 0;) {
+				System.out.print(" ");
+			}
+			for (j = i + 2; j > 0; j--) {
+				System.out.print("*");	
 			}
 			System.out.println();
+				
+			
+			b++;
 		}
-//
-////				if (j % 2 == 1) {
-////				}else {
-////					System.out.print("*");
-////				}
+			
+		}
 
 	}
-
 }
