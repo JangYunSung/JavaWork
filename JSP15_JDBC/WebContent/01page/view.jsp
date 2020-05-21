@@ -133,7 +133,7 @@ function chkDelete(uid){
 	// 삭제 여부, 다시 확인 하고 진행하기
 	var r = confirm("삭제하시겠습니까?");
 	if(r){
-		location.href = 'deleteOk.jsp?uid=' + uid;
+		location.href = 'deleteOk.jsp?uid=<%=uid%>&page=<%=curPage%>';
 	}
 }
 </script>
@@ -152,12 +152,11 @@ UID : <%= uid %><br>
 </div>
 <hr>
 <br>
-<button onclick="location.href='update.jsp?uid=<%= uid%>'">수정하기</button>
+<button onclick="location.href='update.jsp?uid=<%= uid%>&page=<%= curPage%>'">수정하기</button>
 <button onclick="location.href = 'list.jsp?page=<%= curPage%>'">목록보기</button>
 <button onclick="chkDelete(<%= uid %>)">삭제하기</button>
 <button onclick="location.href = 'write.jsp'">신규등록</button>
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
 
