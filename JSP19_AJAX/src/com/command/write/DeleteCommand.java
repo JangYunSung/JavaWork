@@ -7,28 +7,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.lec.beans.WriteDAO;
 
+
 public class DeleteCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		int cnt = 0;
 
 		WriteDAO dao = new WriteDAO();
 
+		//입력한 값을 받아오기
 		int uid = Integer.parseInt(request.getParameter("uid"));
-		int cnt = 0;
 
-		if (uid > 0 && uid !=0) {
-
-			try {
-				 cnt = dao.deleteByUid(uid);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-
+		try {			
+			cnt = dao.deleteByUid(uid);
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
-		
-		request.setAttribute("delete", cnt);
-		
+
+		request.setAttribute("result", cnt);
 	}
 
 }

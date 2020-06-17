@@ -34,8 +34,8 @@ $(document).ready(function(){
 	 });
 	 
 	$("#btn_remove").click(function(){
-		$("#demoXML").html("");
-		$("#demoJSON").html("");
+		$("#demoXML").empty();
+		$("#demoJSON").empty();
 	});
 });
 
@@ -86,7 +86,6 @@ function parseXML(xmlDOM) {
 function parseJSON(jsonObj){
 	var data = jsonObj.data;
 	var i;
-	  
 	var table="<tr><th>UID</th><th>작성자</th><th>글제목</th><th>글내용</th><th>조회수</th><th>작성일</th></tr>";
 	for (i = 0; i < data.length; i++) { 
 		table += "<tr>";

@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"oracle_thin-1723495287f-7934909196543614": {
+		"oracle_thin-1723495512e-20292425810a2a02": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
 			"name": "Oracle - XE",
@@ -16,14 +16,14 @@
 				"home": "C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server",
 				"type": "dev",
 				"provider-properties": {
-					"@dbeaver-connection-type@": "BASIC",
 					"@dbeaver-check-schema-content@": "false",
 					"@dbeaver-always-show-dba@": "false",
 					"@dbeaver-always-use-dba-views@": "false",
 					"@dbeaver-meta-use-sys-schema@": "false",
 					"@dbeaver-meta-use-simple-constraints@": "false",
 					"@dbeaver-use-rule-hint@": "false",
-					"@dbeaver-use-meta-optimizer@": "false"
+					"@dbeaver-use-meta-optimizer@": "false",
+					"@dbeaver-connection-type@": "BASIC"
 				},
 				"auth-model": "oracle_native",
 				"handlers": {}

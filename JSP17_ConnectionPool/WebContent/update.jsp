@@ -54,7 +54,7 @@ function chkSubmit(){
 </script>
 <body>
 <h2>수정</h2>
-<form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()">
+<form name="frm" action="updateOk.jsp" method="post" onsubmit="return chkSubmit()">
 <input type="hidden" name="uid" value="<%= uid %>"/>
 작성자 : <%= name %><br> <%-- 작성자 이름 변경 불가 --%>
 제목 : 
@@ -65,7 +65,7 @@ function chkSubmit(){
 <input type="submit" value="수정"/>
 </form>
 <button onclick="history.back()">이전으로</button>
-<button onclick="location.href='list.do'">목록보기</button>
+<button onclick="location.href='list.jsp'">목록보기</button>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>

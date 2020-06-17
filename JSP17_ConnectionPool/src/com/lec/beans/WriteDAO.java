@@ -51,7 +51,7 @@ public class WriteDAO {
 	} // end close()
 	
 	// 새글 작성 <-- DTO
-	public int insert(WriteDTO dto) throws SQLException ,NamingException{
+	public int insert(WriteDTO dto) throws SQLException, NamingException {
 		String subject = dto.getSubject();
 		String content = dto.getContent();
 		String name = dto.getName();

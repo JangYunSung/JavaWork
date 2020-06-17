@@ -11,26 +11,27 @@ public class UpdateCommand implements Command {
 
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		
-		WriteDAO dao = new WriteDAO();
 		int cnt = 0;
-		
+
+		WriteDAO dao = new WriteDAO();
+
+		//입력한 값을 받아오기
 		int uid = Integer.parseInt(request.getParameter("uid"));
 		String subject = request.getParameter("subject");
 		String content = request.getParameter("content");
-		
-		
-		if(subject != null && 0 < subject.trim().length()) {
-			try {
+
+		// 유효성 체크  null 이거나, 빈문자열이면 이전화면으로 돌아가기
+		if(subject != null && subject.trim().length() > 0){			
+			try {			
 				cnt = dao.update(uid, subject, content);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-		}
-		
-		request.setAttribute("updateOk", cnt);
-		
-		
+
+		} // end if
+
+		request.setAttribute("result", cnt);
+
 	}
 
 }

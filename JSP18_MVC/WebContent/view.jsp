@@ -1,9 +1,10 @@
-<%@page import="com.lec.beans.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<% // dao 사용한 트랜잭션
-	WriteDTO [] arr = (WriteDTO [])request.getAttribute("view");
+<%@ page import="com.lec.beans.*" %>
+
+<% // Controller 로부터 결과 데이터 받음
+	WriteDTO [] arr = (WriteDTO [])request.getAttribute("list");
 %>
 
 <%
@@ -46,7 +47,6 @@ function chkDelete(uid){
 </script>
 <body>
 <h2>읽기 <%= subject %></h2>
-
 <br>
 UID : <%= uid %><br>
 작성자 : <%= name %><br>

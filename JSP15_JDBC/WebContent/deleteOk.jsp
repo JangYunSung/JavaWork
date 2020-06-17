@@ -5,7 +5,6 @@
 <% // parameter 받아오기
 	int uid = Integer.parseInt(request.getParameter("uid"));
 	// ※ 이 단계에서 parameter 검증 필요
-	
 %>
     
 <%!
@@ -66,7 +65,7 @@
 <% } else { %>
 	<script>
 		alert('삭제 성공');
-		location.href = "list.jsp";
+		location.href = "list.jsp";  <%-- 삭제후에는 list 로 가자 --%>
 	</script>
 <% } %>
 

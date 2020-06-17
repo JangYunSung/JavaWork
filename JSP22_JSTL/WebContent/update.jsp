@@ -1,25 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <c:choose>
-	<c:when test="${empty update || fn:length(update) == 0 }">
-		<script>
+	<c:when test="${empty list || fn:length(list) == 0 }">
+			<script>
 				alert("해당 정보가 삭제되거나 없습니다");
 				history.back();
 			</script>
 	</c:when>
+	
 	<c:otherwise>
 
-			
-			
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>수정 ${update[0].subject }</title>
+<title>수정 ${list[0].subject }</title>
 </head>
 <script>
 function chkSubmit(){
@@ -37,12 +36,12 @@ function chkSubmit(){
 <body>
 <h2>수정</h2>
 <form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()">
-<input type="hidden" name="uid" value="${update[0].uid }"/>
-작성자 : ${update[0].name }<br> <%-- 작성자 이름 변경 불가 --%>
+<input type="hidden" name="uid" value="${list[0].uid }"/>
+작성자 : ${list[0].name }<br> <%-- 작성자 이름 변경 불가 --%>
 제목 : 
-<input type="text" name="subject" value="${update[0].subject }"/><br>
+<input type="text" name="subject" value="${list[0].subject }"/><br>
 내용: <br>
-<textarea name="content">${update[0].content }</textarea>
+<textarea name="content">${list[0].content }</textarea>
 <br>
 <input type="submit" value="수정"/>
 </form>
@@ -53,10 +52,7 @@ function chkSubmit(){
 </body>
 </html>
 
-
-
-
-</c:otherwise>	
+	</c:otherwise>
 </c:choose>
 
 

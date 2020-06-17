@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <%@ page import="com.lec.beans.*" %>
 
+<% // Controller 로부터 결과 데이터 받음
+	WriteDTO [] arr = (WriteDTO [])request.getAttribute("list");
+	int uid = Integer.parseInt(request.getParameter("uid"));
 
-<% // DAO 사용한 트랜잭션
-	WriteDTO [] arr = (WriteDTO [])request.getAttribute("update");
 %>
+
 <%
 	if(arr == null || arr.length == 0){ 
 %>
@@ -19,7 +20,6 @@
 	} // end if
 %>
 <%
-	int uid =arr[0].getUid();
 	String name = arr[0].getName();
 	String subject = arr[0].getSubject();
 	String content = arr[0].getContent();
