@@ -1,11 +1,11 @@
 package com.lec.beans;
 
 public class CategoryDTO {
-	private int uid;
-	private String name;
-	private int depth;
-	private int parent;
-	private int order;
+	private int uid;   // ca_uid
+	private String name;  // ca_name
+	private int depth;  // ca_depth
+	private int parent;  // ca_parent
+	private int order;   // ca_order
 	
 	public CategoryDTO() {
 		super();

@@ -1,19 +1,19 @@
 package com.lec.beans;
 
-public class AjaxCategoryResult {
-	private int count;
-	private String status;
-	private String message;
+public class AjaxWriteResult {
+	private int count;   // 데이터 개수
+	private String status;  // 처리 결과
+	private String message;  // 결과 메세지
 	
-	public AjaxCategoryResult(int count, String status, String message) {
-		super();
-		this.count = count;
-		this.status = status;
-		this.message = message;
+	/*
+	{
+		count : ○○○,
+		status : ○○○,
+		message : ○○○
 	}
-	public AjaxCategoryResult() {
-		super();
-	}
+	 */
+	
+	public AjaxWriteResult() {}
 	
 	public int getCount() {
 		return count;
@@ -33,4 +33,7 @@ public class AjaxCategoryResult {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	
+	
+	
 }

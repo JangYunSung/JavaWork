@@ -1,9 +1,4 @@
-
-/* Drop Tables */
-
 DROP TABLE test_category CASCADE CONSTRAINTS;
-
-/* Create Tables */
 
 CREATE TABLE test_category
 (
@@ -14,12 +9,12 @@ CREATE TABLE test_category
 	ca_order number DEFAULT 1,
 	PRIMARY KEY (ca_uid)
 );
-SELECT * FROM TEST_CATEGORY;
 
+-- 시퀀스
 DROP SEQUENCE test_category_seq;
 CREATE SEQUENCE test_category_seq;
 
--- 샘플 데이터                                                                                                               name, depth, parent, order
+-- 샘플 데이터                                                                                          name, depth, parent, order
 INSERT INTO test_category VALUES(test_category_seq.nextval, '의류', 1, null, 1);
 INSERT INTO test_category VALUES(test_category_seq.nextval, '식품', 1, null, 3);
 INSERT INTO test_category VALUES(test_category_seq.nextval, '스포츠', 1, null, 2);
@@ -66,26 +61,27 @@ INSERT INTO test_category VALUES(test_category_seq.nextval, '야구', 2, 3, 1);
 INSERT INTO test_category VALUES(test_category_seq.nextval, '야구배트', 3, 24, 1);
 INSERT INTO test_category VALUES(test_category_seq.nextval, '글러브', 3, 24, 2);
 
--- depth 2 이면서 부모 uid 가 1인 카테고리 읽기 order 순서로 오름차순
+
+SELECT * FROM test_category;
+
+
+-- depth 2 이면서 부모 uid 가 1 인 카테고리 읽기  (order 오름차순 순서로)
 SELECT ca_uid "uid", ca_name name, ca_depth DEPTH, ca_parent parent, ca_order "order"
-FROM TEST_CATEGORY 
+FROM test_category
 WHERE ca_depth = 2 AND ca_parent = 1
 ORDER BY ca_order ASC;
 
--- depth가 1 일때 쿼리
-SELECT ca_uid "uid", ca_name name, ca_depth DEPTH, ca_parent parent, ca_order "order"
-FROM TEST_CATEGORY 
-WHERE ca_depth = 1
-ORDER BY ca_order ASC;
 
 
---SELECT ca_uid "uid", ca_name name, ca_depth DEPTH, ca_parent parent, ca_order "order"
---,CASE
---	WHEN PARENT = NULL THEN FROM TEST_CATEGORY WHERE ca_depth = 1
---	WHEN PARENT = 1 THEN FROM TEST_CATEGORY WHERE ca_depth = 2
---	WHEN PARENT = 2 THEN FROM TEST_CATEGORY WHERE ca_depth = 3
---	END 
---FROM TEST_CATEGORY 
---ORDER BY ca_order ASC;
+
+
+
+
+
+
+
+
+
+
 
 

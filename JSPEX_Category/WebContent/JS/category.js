@@ -1,110 +1,94 @@
-var viewItem = "depth=1&parent=0";   //초기값을 세팅해준다
-
-
+var MAX_DEPTH = 3;   // depth 1 ~ 3
 
 $(document).ready(function(){
-	$( '#mycate span:nth-child(1) select' ).addClass( 'first' );
-	$( '#mycate span:nth-child(2) select' ).addClass( 'second' );
-	$( '#mycate span:nth-child(3) select' ).addClass( 'third' );
-	
-	loadPage(); //첫번째 드롭박스의 나열될 값을 받아온다
-	
-	
-	                                                                                           // 0번째이니까 
-	// class first의 값이 변할때  .first에서 선택한 옵션의 uid 데이터 와 .first에서 선택한 옵션의 depth 값을 int형으로 변환한값에 +1한 값을 viewItem 변수에 담는다   
-	$(".first").change(function(){
-		if($(this).val() == 0){
-	         $(".second").attr("disabled",true);
-	         $(".second").html("");
-	         $(".third").attr("disabled",true);
-	         $(".third").html("");
-	         
-	      }else{
-	    	  viewItem = "depth="+(parseInt($('.first option:selected').attr('data-depth'))+1)+"&parent="+$('.first option:selected').attr('data-uid');
-	    	  console.log(viewItem);
-	    	  loadPage();   // class first값이 변하고나서 나열될 값을 로딩한다
-	      }
-	});
-	
-	$(".second").change(function(){
-		if($(this).val() == 0){
-	         $(".third").attr("disabled",true);
-	         $(".third").html("");
-	         
-	      }else{
-	    	  viewItem = "depth="+(parseInt($('.second option:selected').attr('data-depth'))+1)+"&parent="+$('.second option:selected').attr('data-uid');
-	  		console.log(viewItem);
-	  		loadPage();
-	      }
-		
-	});
-}); 
+	getCategory(1);  // depth1 카테고리 읽기
+});
 
-//$(document).ready( function() {
-//	$( '#mycate span:nth-child(1) select' ).attr('id', 'first');
-//} );
-//$(document).ready( function() {
-//	$( '#mycate span:nth-child(2) select' ).attr('id', 'second');
-//} );
-//$(document).ready( function() {
-//	$( '#mycate span:nth-child(3) select' ).attr('id', 'third');
-//} );
-//$(document).ready(function(){
-
-//	loadPage();
-//	
-//	
-//	
-//	
-//	$("#first").change(function(){
-//		viewItem = "uid="+$('#first option:selected').attr('data-uid')+"&depth="+(parseInt($('#first option:selected').attr('data-depth'))+1);
-//		console.log(viewItem);
-//		loadPage();
-//	});
-//	
-//	$("#second").change(function(){
-//		viewItem = "uid="+$('#second option:selected').attr('data-uid')+"&depth="+(parseInt($('#second option:selected').attr('data-depth'))+1);
-//		console.log(viewItem);
-//		loadPage();
-//	});
-//}); 
-function loadPage(){
+// 특정 depth, 특정 parent 의 category 불러오기
+function getCategory(depth, parent){
+	if(parent == undefined) parent = 0;  // 상위부모 없는 경우
+	
 	$.ajax({
-		url : "cate_list.ajax",  //category list.ajax 에 값을 넘겨준다
-		type : "POST",    // 형식은 GET방식말고 POST 방식 
-		data : viewItem,   // 데이터는 viewItem에 담아서 보낸다   viewItem : uid=?&
-		cache : false,   // false 를 하는 이유 : ajax로 통신하는중 남아있는 데이터가 있을경우 새로운 값을 받지 못하기때문에 false 로 한다 .
+		url : "cate_list.ajax",
+		type : "POST",
+		data : {
+			"depth" : depth,
+			"parent" : parent
+		},
+		cache : false,
 		success : function(data, status){
-			if(status == "success"){    //seccess (PlainObject data, String textStatus, jqXHR jqXHR) : 요청이 성공 했을 때 호출할 콜백 함수
-				console.log(data);
-				updateList(data);        // success된다면   업데이트리스트에 데이터를 담는다 
+			if(status == "success"){
+				buildSelect(depth, data);
 			}
 		}
-	})
-}
+	});
+} // end getCategory()
 
-function updateList(jsonObj){         // jsonObj 값에 data를 받아온다
-	result = "<option value='0'>선택하세요---</option>"; 
+// depth 값과 jsonObj 값으로 <select> 만들기
+function buildSelect(depth, jsonObj){
+	if(jsonObj.status != "OK") return;
 	
-	if(jsonObj.status == "OK"){
-		
-		var count = jsonObj.count;    // jsonObj에 담긴 데이터에 갯수 
-		var i;
-		var items = jsonObj.data;   // jsonObj가 불러온 데이터를  item에 담는다
-		for(i = 0; i < count; i++){       //선택하는 드롭박스에 depth은 다 똑같으니까    items[0].depth 
-		
-			$('.cate span:nth-child('+ items[0].depth + ') select').attr("disabled", false);
-			result += "<option class= 'optionf' data-uid='"+ items[i].uid+"' data-depth='"+ items[i].depth+"'>" + items[i].name + "</option>"
-			
-			
-		}   // 클래스 .cate 자식 span (현재 items[0].depth값  ajax값이 한바퀴 돌때마다 +1) 
-		$('.cate span:nth-child('+ items[0].depth + ') select').html(result);
-		$('.cate span:nth-child('+ (items[0].depth + 1) + ') select').attr("disabled", true);
-		$('.cate span:nth-child('+ (items[0].depth + 1) + ') select').html("");
-		return true;
-	} else {
-		alert(jsonObj.message);
-		return false;
+	var elm = 
+		$("div#mycate span:nth-child(" + depth + ") select");
+	
+	// 해당 depth 의 <select> 의 disabled 해제
+	elm.attr("disabled", false);
+	elm.off("change");  // 일단 onchange 이벤트 핸들러 삭제
+	elm.empty();   // 내용 지우기
+	
+	var list = jsonObj.data;
+	
+	var result   // 선택안한 상태는 value 값을 0 으로 두자 
+		= "<option value='0'>--선택하세요--</option>";
+	for(i = 0; i < list.length; i++){
+		result += "<option value='" + list[i].uid + "'>";
+				// select 될때 uid 값. 다음 depth 의 parent 값!
+		result += list[i].name;
+		result += "</option>";
 	}
-	return false;
-} 
+	
+	// <select> 에 result 결과값 추가
+	elm.html(result);
+	
+	// select 의 onchange 이벤트 핸들러 작성
+	
+	// elm.on("change", function(){});
+	elm.change(function(){
+		
+		// MAX_DEPTH 범위내에서만 가동.
+		// 최하위 depth 일때는 가동할 필요 없슴
+		if(depth < MAX_DEPTH){
+			for(var d = depth + 1; d <= MAX_DEPTH; d++){
+				var e = $("div#mycate span:nth-child(" + d + ") select");
+				e.off("change");
+				e.empty();
+				e.attr("disabled", true);
+			}
+			
+			// value 값이 0보다 큰 경우만
+			// 즉 parent 값이 있는 것을 select 한 경우만 다음 depth 읽어오기 
+			if(elm.val() > 0){
+				getCategory(depth + 1, elm.val());  // 다음 depth, parnet값
+			}
+		}
+		
+	});
+	
+	
+	
+}  // end buildSelect()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
