@@ -1,4 +1,4 @@
-package com.lec.sts19_rest.controller;
+package com.lec.sts19_rest.board.controller;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
@@ -20,117 +20,98 @@ import com.lec.sts19_rest.board.beans.IWriteDAO;
 @RestController
 @RequestMapping("/MyRest")
 public class MyRestController {
-	
 	@RequestMapping("/")
-	public String helloTEXT() {
+	public String helloTEST() {
 		return "Hello REST";
-	}
+	} // end helloTEST()
+	
 	@RequestMapping("/helloJSON")
 	public BWriteDTO helloJSON() {
-		BWriteDTO dto = new BWriteDTO(100, "안녕하세요", "윤성입니다", "윤성", 1, new Timestamp(100000));
+		BWriteDTO dto = new BWriteDTO(100, "안녕하세요", "윤종섭입니다", "윤종섭", 1, new Timestamp(10000));
 		
 		return dto;
-			 
-	}
+	} // end helloJSON()
 	
-	// JSON 데이터 < -- 자바 List<>
-	@RequestMapping("listJSON")
+	/**
+	 * JSON 데이터 <-- 자바 List<>
+	 * @return
+	 */
+	@RequestMapping("/listJSON")
 	public List<BWriteDTO> listJSON(){
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
 		return dao.select();
-	}
-	
-	
-	// JSON 데이터 < -- 자바 배열
-	@RequestMapping("arrJSON")
-	public BWriteDTO[] arrJSON(){
-		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-		List<BWriteDTO> list = dao.select();
-		BWriteDTO [] arr = new BWriteDTO[list.size()]; 
-		return list.toArray(arr);
-	}
-	
-	// JSON 데이터 < -- 자바 Map<k,v>
-	@RequestMapping("mapJSON")
-	public Map<Integer , BWriteDTO> mapJSON(){
-		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-		List<BWriteDTO> list = dao.select();
+	} // end listJSON()
 
-		Map<Integer , BWriteDTO> map = new HashMap<Integer , BWriteDTO>();
+	/**
+	 * JSON 데이터 <-- 자바 배열
+	 * @return
+	 */
+	@RequestMapping("/arrJSON")
+	public BWriteDTO[] arrJSON() {
+		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+		List<BWriteDTO> list = dao.select();
+		BWriteDTO[] arr = new BWriteDTO[list.size()];
+		return list.toArray(arr);
+	} // end arrJSON()
+	
+	/**
+	 * JSON 데이터 <-- 자바 Map<K, V>
+	 * @return
+	 */
+	@RequestMapping("/mapJSON")
+	public Map<Integer, BWriteDTO> mapJSON(){
+		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+		List<BWriteDTO> list = dao.select();
+		
+		Map<Integer, BWriteDTO> map = new HashMap<>();
+		
 		for (BWriteDTO dto : list) {
 			map.put(dto.getUid(), dto);
 		}
 		
 		return map;
-	}
-	
-	
-	// XML 데이터 < -- 자바객체
+	} // end mapJSON()
+
+	/**
+	 * XML 데이터 <-- 자바 객체
+	 * @return
+	 */
 	@RequestMapping("/helloXML")
 	public EmployeeVO helloXML() {
-		return new EmployeeVO(100, "홍길동", 200, new int[] {10, 20, 30},34.2);
-	}
+		return
+				new EmployeeVO(100, "윤종섭", 13, new int[] {100, 100, 100}, 300);
+	} // end helloXML()
 	
-	
-	// XML 데이터 <-- 자바 List<> 
+	/**
+	 * XML 데이터 <-- 자바 List<>
+	 * @return
+	 */
 	@RequestMapping("/listXML")
 	public EmployeeListVO listXML() {
 		EmployeeListVO employees = new EmployeeListVO();
-				
-				
-			EmployeeVO emp1 = new EmployeeVO(102 , "장" , 13 , new int[]{101,200,300}, 40.6);
-			EmployeeVO emp2 = new EmployeeVO(101 , "윤" , 15 , new int[]{100,201,300}, 40.2);
-			EmployeeVO emp3 = new EmployeeVO(100 , "성" , 14 , new int[]{100,200,301}, 40.4);
-			
-			employees.getEmployees().add(emp1);
-			employees.getEmployees().add(emp2);
-			employees.getEmployees().add(emp3);
-			
-
-			return employees;
-	}
-	
-	
+		
+		EmployeeVO emp1 = new EmployeeVO(100, "윤종섭", 13, new int[] {100, 100, 100}, 100.0);
+		EmployeeVO emp2 = new EmployeeVO(101, "마유", 10, new int[] {97, 85, 95}, 95.8);
+		EmployeeVO emp3 = new EmployeeVO(102, "제이", 8, new int[] {78, 85, 100}, 87.4);
+		
+		employees.getEmployees().add(emp1);
+		employees.getEmployees().add(emp2);
+		employees.getEmployees().add(emp3);
+		
+		return employees;
+	} // end listXML()
 	
 	@RequestMapping("/read/{uid}")
 	public ResponseEntity<BWriteDTO> read(@PathVariable("uid") int uid) {
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
 		BWriteDTO dto = dao.selectByUid(uid);
 		
+		// 실패 처리
+		if(dto == null) return new ResponseEntity<BWriteDTO>(HttpStatus.NOT_FOUND);	// 404
 		
-		//실패
-		if(dto == null) return new ResponseEntity(HttpStatus.NOT_FOUND);  // 404
+		// 성공 처리
+		return new ResponseEntity<BWriteDTO>(dto, HttpStatus.OK);	// 200
 		
-		return new ResponseEntity<BWriteDTO>(dto, HttpStatus.OK); // 200
-	}
-		
-		
-		
-		
-		
-		
-		
-		
-	}
+	} // end read()
 	
-	
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+} // end RestController
