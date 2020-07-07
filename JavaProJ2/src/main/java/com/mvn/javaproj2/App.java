@@ -26,18 +26,33 @@ public class App
         App app = new App();
         String welcome = app.getWelcome();
         String hello = app.getHello();
-        String bye = app.getBye();
+		String bye = app.getBye();
         
-        // 위 메소드의 동작한 결과값을 검증하려면?
-        if("welcome".equals(welcome)) System.out.println(true);
-        if("hello".equals(hello)) System.out.println(true);
-        if("bye".equals(bye)) System.out.println(true);
-        
+		// 위 메소드의 동작한 결과값을 검증하려면?
+		if("Welcome".equals(welcome)) System.out.println(true);
+		if("hello".equals(hello)) System.out.println(true);
+		if("bye".equals(bye)) System.out.println(true);	
         
     }
-    
-    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

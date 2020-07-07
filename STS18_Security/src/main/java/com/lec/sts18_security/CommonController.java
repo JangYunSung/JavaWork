@@ -21,7 +21,7 @@ public class CommonController {
 		System.out.println("logout: " + logout);
 		
 		if(error != null) {
-			model.addAttribute("error", "Logint Error Check Your Account");
+			model.addAttribute("error", "Login Error Check Your Account");
 		}
 		
 		if(logout != null) {
@@ -38,6 +38,9 @@ public class CommonController {
 	@PostMapping("/customLogout")
 	public void logoutPost() {
 		System.out.println("post custom logout");
+		// ↑ 이것은 안찍힐 것이다(확인!),  
+		// 이미 로그아웃 되어 있는 상태에서 /customLogout 이 요청되면
+		// 자동으로 로그인 페이지로 이동하도록 동작한다.
 	}
 	
 	
